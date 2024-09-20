@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+body {
+  @apply bg-gray-100;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+.header {
+  @apply fixed top-0 left-0 w-full bg-gray-800 text-white flex items-center justify-between p-4 z-10;
+}
+
+/* Sidebar styles */
+.sidebar {
+  @apply fixed top-16 left-0 h-[calc(100vh-4rem)] w-64 bg-gray-700 text-white transition-transform transform -translate-x-full lg:translate-x-0 lg:w-48 lg:relative;
+  /* Ensure sidebar doesn't scroll and takes up the full viewport height */
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  @apply translate-x-0;
+}
+
+/* Main content styles */
+.main {
+  @apply flex-1 p-4 bg-gray-100 overflow-auto; /* Ensure main content scrolls */
+  margin-top: 4rem;
+  height: calc(100vh - 4rem); /* Adjust height to ensure space for header */
+}
+
+/* Container and Content Layout */
+.container {
+  @apply flex flex-col h-screen;
+}
+
+.content {
+  @apply flex flex-1; /* Adjusted to ensure it takes available space */
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    @apply -translate-x-full;
+  }
+  .main {
+    @apply ml-0;
+  }
+  .content {
+    @apply ml-0;
+  }
+}
