@@ -14,7 +14,7 @@ function DashboardAdmin() {
 
   // Fetch inventory items from the API
   const fetchInventoryItems = async () => {
-    setLoading(true); // Start loading
+    setLoading(true); 
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/item/inventory-list`,
@@ -27,7 +27,7 @@ function DashboardAdmin() {
       console.error("Error fetching inventory items:", error);
       toast.error("Failed to fetch inventory data.");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); 
     }
   };
 

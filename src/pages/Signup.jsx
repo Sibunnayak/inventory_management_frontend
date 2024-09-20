@@ -28,7 +28,7 @@ function Signup() {
     }
 
     try {
-      const url = `${import.meta.env.VITE_API_URL}/auth/signup`; // Access the environment variable correctly
+      const url = `${import.meta.env.VITE_API_URL}/auth/signup`; 
       const response = await axios.post(url, signupInfo, {
         headers: {
           "Content-Type": "application/json",

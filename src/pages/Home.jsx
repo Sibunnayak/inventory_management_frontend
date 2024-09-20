@@ -10,7 +10,7 @@ function Home({ isAuthenticated, userRole }) {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   if (!isAuthenticated) {
-    // Redirect to login if the user is not authenticated
+
     return <Navigate to="/login" />;
   }
 
@@ -20,7 +20,7 @@ function Home({ isAuthenticated, userRole }) {
       <div className="content">
         <Sidebar isSidebarOpen={isSidebarOpen} closeSidebar={closeSidebar} userRole={userRole} />
         <main className="main">
-          <Outlet /> {/* This will render the nested routes */}
+          <Outlet /> 
         </main>
       </div>
     </div>

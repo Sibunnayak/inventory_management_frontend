@@ -5,9 +5,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 function DashboardUser() {
   const [inventoryItems, setInventoryItems] = useState([]);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true); 
 
-  const token = localStorage.getItem("token") || ""; // Fallback for token
+  const token = localStorage.getItem("token") || ""; 
 
   // Fetch inventory items from the API
   const fetchInventoryItems = async () => {
@@ -23,7 +23,7 @@ function DashboardUser() {
       console.error("Error fetching inventory items:", error);
       toast.error("Failed to fetch inventory data.");
     } finally {
-      setLoading(false); // Stop loading after the request is completed
+      setLoading(false); 
     }
   };
 
@@ -46,7 +46,7 @@ function DashboardUser() {
       <h1 className="text-2xl font-bold mb-6">Inventory Details</h1>
 
       {loading ? (
-        <div className="text-center">Loading...</div> // Loading indicator
+        <div className="text-center">Loading...</div> 
       ) : (
         <table className="min-w-full bg-white border text-sm">
           <thead>

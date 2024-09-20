@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ProfileDropdown from "./ProfileDropdown";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+import profileicon from "../assets/profileicon.png";
 
 function Header({ toggleSidebar }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -11,10 +12,9 @@ function Header({ toggleSidebar }) {
   const handleLogout = () => {
     // Remove user info and token from localStorage
     localStorage.removeItem("loggedInUser");
-    localStorage.removeItem("token"); // Add this line if you're storing the token
+    localStorage.removeItem("token"); 
     
     setIsDropdownOpen(false); 
-    // Optionally, you could set any user state to null here if using context/state management
     setTimeout(() => {
       navigate("/login");
     }, 1000);
@@ -36,9 +36,9 @@ function Header({ toggleSidebar }) {
           className="flex items-center space-x-2"
         >
           <img
-            src="profile-icon.png"
+            src={profileicon} 
             alt="Profile"
-            className="w-8 h-8 rounded-full"
+            className="w-9 h-9 rounded-full"
           />
         </button>
         {isDropdownOpen && <ProfileDropdown handleLogout={handleLogout} />}
